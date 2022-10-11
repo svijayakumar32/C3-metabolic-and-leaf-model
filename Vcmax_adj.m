@@ -5,7 +5,7 @@ Vcmax_m=115.5;%
 Jmax_m=188.8;%
 
 %%%%%%%%%%
-Lii=1500;%light intensity
+Lii=1800;%light intensity
 %Farqhuar model parameters
 Gr=38.6;%von caemmerer 2020 
 Rd=1;
@@ -49,7 +49,7 @@ WeatherTemp=25;
 WeatherRH=0.6;
 WeatherWind=5;
 Convert=1E6/(2.35E5); %Convert W m^{-2} to u moles m^{-2} s^{-1}
-Radiation_PAR=470*0.85*0.85;%%%%
+Radiation_PAR=Lii/Convert*0.85*0.85;%%%%
 Radiation_NIR=0;
 Radiation_LW=0;
 PhotosynthesisType=1.1;
@@ -66,7 +66,7 @@ for i=1:5
 Air_CO2=CA(i);
 if MetaOnly==1
 CO2i=Air_CO2*0.7; % intercellular CO2 
-PPFDi=Radiation_PAR*Convert;
+PPFDi=Lii;
 NetAssimilation=EPS_Drive_GRNs(Einput,CO2i,PPFDi,WeatherTemp,GRNC,0,Eio);
 else
 LeafResult=Leaf(WeatherRH,WeatherTemp,Air_CO2,WeatherWind,Radiation_PAR,Radiation_NIR,Radiation_LW,PhotosynthesisType,Vcmax25,Jmax25,GRNC,Einput,Eio);

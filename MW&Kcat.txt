@@ -1,4 +1,4 @@
-No	Value	Kcat	MW
+No	Vmax	Kcat	MW      
 V1	120	16	588000
 V2	1241.24	540 	45000 
 V3	166.35	50 	180000 

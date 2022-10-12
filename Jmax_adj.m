@@ -1,12 +1,14 @@
 clear all;
 
 %Estimated From ACi Curve 
-Vcmax_m=115.5;%
-Jmax_m=188.8;%
+% Vcmax_m=115.5;% rice Vcmax
+% Jmax_m=188.8;% rice Jmax
+Vcmax_m=76;% potato Vcmax
+Jmax_m=244;% potato Jmax
 
 %%%%%%%%%%
 Lii=1800;%light intensity
-%Farqhuar model parameters
+%Farquhar model parameters
 Gr=38.6;%von caemmerer 2020 
 Rd=1;
 I2=Lii/2*0.85*(1-0.15);
@@ -60,7 +62,7 @@ GRNC=0;
 
 for j=1:25
     j
-VmaxAdj=0.8+j*0.02;
+VmaxAdj=2.0+j*0.02;%adjust enzyme activity  %modify ratio 1.2 to 1.4 (or greater) if no fit %default 0.8
 Eio(1)=Edata.data(1,1)*Vrubusco_adj;
 Eio(2:27)=Edata.data(2:27,1)*VmaxAdj;
 

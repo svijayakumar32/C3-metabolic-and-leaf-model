@@ -1,8 +1,10 @@
 clear all;
 
 %Estimated From ACi Curve 
-Vcmax_m=115.5;%
-Jmax_m=188.8;%
+% Vcmax_m=115.5;% rice Vcmax
+% Jmax_m=188.8;% rice Jmax
+Vcmax_m=76;% potato Vcmax
+Jmax_m=244;% potato Jmax
 
 %%%%%%%%%%
 Lii=1800;%light intensity
@@ -18,8 +20,7 @@ O=210;%mbar
 CA=[100,150,200,250,300];
 global Vrubusco_adj;
 global VmaxAdj;
-VmaxAdj=1.3;%adjust enzyme activity
-
+VmaxAdj=2.1;%adjust enzyme activity i.e. sub in optimal Vmaxadj from Jmax_adj % default 1.3
 
 global pcfactor;  
 ProteinTotalRatio=0;
@@ -59,7 +60,7 @@ GRNC=0;
 
 for j=1:25
     j
-Vrubusco_adj=0.8+j*0.02;
+Vrubusco_adj=0.6+j*0.02;%adjust enzyme activity between 0.6-1.0 %default 0.8
 Eio(1)=Edata.data(1,1)*Vrubusco_adj;
 Eio(2:27)=Edata.data(2:27,1)*VmaxAdj;
 for i=1:5

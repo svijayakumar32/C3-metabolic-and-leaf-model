@@ -20,7 +20,7 @@ O=210;%mbar
 CA=[100,150,200,250,300];
 global Vrubusco_adj;
 global VmaxAdj;
-VmaxAdj=2.1;%adjust enzyme activity i.e. sub in optimal Vmaxadj from Jmax_adj % default 1.3
+VmaxAdj=1.0;%adjust enzyme activity i.e. sub in optimal Vmaxadj from Jmax_adj % default 1.3
 
 global pcfactor;  
 ProteinTotalRatio=0;

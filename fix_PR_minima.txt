@@ -1,0 +1,36 @@
+for j = 1:popSize
+%         gp2condition_RuCon = pop(3,j)/2;
+%         global gp2V111;
+%         gp2V111 = pop(3,j) * 0.24;            % Here the rate of Rubisco oxygenation is adjusted.
+            %Temp = CM_Drive(pop, j);
+            Eiopop=Eio;
+            %Fixing minimal enzyme level constraints for photorespiratory metabolites from optimization at 129 ppm 
+            if Eio(13)>80 % Currently using dummy values, sub in correct values when optimization at 129 completes %
+            disp('Phosphoglycolate phosphatase value is above the limit.')
+            return 
+            elseif Eio(14)>200
+            disp('Glycerate kinase value is above the limit.')
+            return
+            elseif Eio(15)>25
+            disp('(S)-2-hydroxy-acid oxidase & Catalase value is above the limit.')
+            return
+            elseif Eio(16)>30
+            disp('Serine-glyoxylate transaminase value is above the limit.')
+            return
+            elseif Eio(17)>180
+            disp('Glycerate dehydrogenase value is above the limit.')
+            return
+            elseif Eio(18)>23
+            disp('Glycine transaminase value is above the limit.')
+            return
+            elseif Eio(19)>10
+            disp('Glycine dehydrogenase (aminomethyl-transferring) value is above the limit.')
+            return
+            else
+            end % All values within constraints, so analysis can proceed
+            Eiopop(1:26)=pop(3:28,j);
+            Eiopop(7)=Eiopop(4);
+            Eiopop(9)=Eiopop(6);
+	    Eiopop(11)=Eio(11);
+            Eiopop(12)=Eio(12);%VATP synthesis not used
+            Temp=EPS_Drive_GRNs(Einput,CO2i,PPFDi,WeatherTemp,GRNC,0,Eiopop);

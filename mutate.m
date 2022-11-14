@@ -37,6 +37,7 @@ for j = 2:popSize
                     elseif m==9     % For the transketolase, only count once. 
                         Nothing =1;                
                     else
+			            rng shuffle % shuffle random values so there is no repetition of sequence from the random number generator
                         randval = 1 - 2 * rand(1);
                         tempPop(m) = (1+randval * mutatePercentage) * pop(m,j);
                         sum = sum + (tempPop(m)/BK(m-2))*MW(m-2);       % mg protein l-1 

@@ -9,11 +9,11 @@ Jmax_m=244;% potato Jmax
 %%%%%%%%%%
 Lii=1800;%light intensity
 %Farquhar model parameters
-Gr=38.6;%von caemmerer 2020 
+Gr=38.6;%µbar von caemmerer 2020 %Gamma Star
 Rd=1;
 I2=Lii/2*0.85*(1-0.15);
 Theta=0.7;
-Kc=272;%ubar
+Kc=272;%µbar
 Ko=166;%mbar Sharkey 2007
 O=210;%mbar
 J=(I2+Jmax_m-sqrt((I2+Jmax_m)^2-4*Theta*I2*Jmax_m))/(2*Theta);

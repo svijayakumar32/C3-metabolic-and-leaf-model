@@ -1,19 +1,19 @@
 clear all;
 
 %Estimated From ACi Curve 
-% Vcmax_m=115.5;% rice Vcmax
-% Jmax_m=188.8;% rice Jmax
-Vcmax_m=76;% potato Vcmax
-Jmax_m=244;% potato Jmax
+Vcmax_m=115.5;% rice Vcmax
+Jmax_m=188.8;% rice Jmax
+% Vcmax_m=76;% potato Vcmax
+% Jmax_m=244;% potato Jmax
 
 %%%%%%%%%%
 Lii=1800;%light intensity
-%Farqhuar model parameters
-Gr=38.6;%von caemmerer 2020 
+%Farquhar model parameters
+Gr=38.6;% µbar, von caemmerer 2020 %Gamma Star
 Rd=1;
 I2=Lii/2*0.85*(1-0.15);
 Theta=0.7;
-Kc=272;%ubar
+Kc=272;%µbar
 Ko=166;%mbar Sharkey 2007
 O=210;%mbar
 %%%%%%%%%%%%%%%%%%%%%
@@ -42,7 +42,7 @@ pcfactor=1/ProteinTotalRatio;
 % end
 % Einput=ExpValue;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Einput=ones(37,1);%No gene expression data inpu
+Einput=ones(37,1);%No gene expression data input
 Edata=importdata('Einput7.txt');
 Eio=Edata.data(:,1);
 MetaOnly=0;% if MetaOnly=1 run only Metabolic model

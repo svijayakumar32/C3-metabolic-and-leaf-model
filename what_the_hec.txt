@@ -1,0 +1,112 @@
+>Write an .m file script, include output variable
+
+>Convert script to function (call without modifying contents, only input args)
+
+>Log onto HEC (wayland.hec.lancs.ac.uk) - same credentials as normal university login
+
+>Transfer/Update files between local and remote directories using WinSCP
+
+>Create batch job shell script (see example)
+
+>Load the matlab module
+module add matlab/2022a
+
+>Invoke the matlab compiler tool mcc to generate standalone and its wrapper script prefixed by 'run_'
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_140.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_160.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_180.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_200.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_220.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_240.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_260.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_280.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_300.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_320.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_340.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_360.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_380.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_400.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_potato_420.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_140.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_160.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_180.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_200.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_220.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_240.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_260.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_280.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_300.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_320.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_340.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_360.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_380.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_400.m
+mcc -R -singleCompThread -R -nojvm -m gpmain_fix_rice_420.m
+>Convert script using the dos2unix command followed by the name of the file
+dos2unix myjobfile.sh
+
+dos2unix job_gpmain_140_potato.sh
+dos2unix job_gpmain_160_potato.sh
+dos2unix job_gpmain_180_potato.sh
+dos2unix job_gpmain_200_potato.sh
+dos2unix job_gpmain_220_potato.sh
+dos2unix job_gpmain_240_potato.sh
+dos2unix job_gpmain_260_potato.sh
+dos2unix job_gpmain_280_potato.sh
+dos2unix job_gpmain_300_potato.sh
+dos2unix job_gpmain_320_potato.sh
+dos2unix job_gpmain_340_potato.sh
+dos2unix job_gpmain_360_potato.sh
+dos2unix job_gpmain_380_potato.sh
+dos2unix job_gpmain_400_potato.sh
+dos2unix job_gpmain_420_potato.sh
+dos2unix job_gpmain_140_rice.sh
+dos2unix job_gpmain_160_rice.sh
+dos2unix job_gpmain_180_rice.sh
+dos2unix job_gpmain_200_rice.sh
+dos2unix job_gpmain_220_rice.sh
+dos2unix job_gpmain_240_rice.sh
+dos2unix job_gpmain_260_rice.sh
+dos2unix job_gpmain_280_rice.sh
+dos2unix job_gpmain_300_rice.sh
+dos2unix job_gpmain_320_rice.sh
+dos2unix job_gpmain_340_rice.sh
+dos2unix job_gpmain_360_rice.sh
+dos2unix job_gpmain_380_rice.sh
+dos2unix job_gpmain_400_rice.sh
+dos2unix job_gpmain_420_rice.sh
+
+>Submit job to HEC
+>qsub myfile.sh
+
+qsub job_gpmain_140_potato.sh
+qsub job_gpmain_160_potato.sh
+qsub job_gpmain_180_potato.sh
+qsub job_gpmain_200_potato.sh
+qsub job_gpmain_220_potato.sh
+qsub job_gpmain_240_potato.sh
+qsub job_gpmain_260_potato.sh
+qsub job_gpmain_280_potato.sh
+qsub job_gpmain_300_potato.sh
+qsub job_gpmain_320_potato.sh
+qsub job_gpmain_340_potato.sh
+qsub job_gpmain_360_potato.sh
+qsub job_gpmain_380_potato.sh
+qsub job_gpmain_400_potato.sh
+qsub job_gpmain_420_potato.sh
+qsub job_gpmain_140_rice.sh
+qsub job_gpmain_160_rice.sh
+qsub job_gpmain_180_rice.sh
+qsub job_gpmain_200_rice.sh
+qsub job_gpmain_220_rice.sh
+qsub job_gpmain_240_rice.sh
+qsub job_gpmain_260_rice.sh
+qsub job_gpmain_280_rice.sh
+qsub job_gpmain_300_rice.sh
+qsub job_gpmain_320_rice.sh
+qsub job_gpmain_340_rice.sh
+qsub job_gpmain_360_rice.sh
+qsub job_gpmain_380_rice.sh
+qsub job_gpmain_400_rice.sh
+qsub job_gpmain_420_rice.sh
+>View output file(s) (predefined in .m script)

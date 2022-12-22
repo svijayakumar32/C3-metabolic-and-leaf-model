@@ -17,17 +17,19 @@
 %    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function gpmain(CO2i,output)
 global Vrubusco_adj;
-Vrubusco_adj=1.12;
-global VmaxAdj;%adjust enzyme activity
-VmaxAdj=1.24;
+Vrubusco_adj=0.7; %1.12 %keep as 1.0 after fixed optimization
+global VmaxAdj;%
+VmaxAdj=2.1;%1.24
 
-CO2i=280;
+CO2i=280;% adj 200,220,240 or 260
 PPFDi=2000;
 WeatherTemp=25;
 GRNC=0;
 Einput=ones(37,1);%No gene expression data input
 Edata=importdata('Einput7.txt');
+%Edata=importdata('Einput_rice.txt');
 Eio=Edata.data(:,1);
 Eio(1)=Edata.data(1,1)*Vrubusco_adj;
 Eio(2:26)=Edata.data(2:26,1)*VmaxAdj;
@@ -90,7 +92,7 @@ global MW;
 MW=MWKcat(:,3);
 
 
-% Calculat the default nitrogen concentration
+% Calculate the default nitrogen concentration
 sumd = 0;
 for k = 1:VmaxNum
     sumd= sumd + pop(k+2,1)/BK(k)*MW(k);
@@ -141,7 +143,8 @@ for i = 1:numofGen
             Eiopop(7)=Eiopop(4);
             Eiopop(9)=Eiopop(6);
             Temp=EPS_Drive_GRNs(Einput,CO2i,PPFDi,WeatherTemp,GRNC,0,Eiopop);
-            % check whether the concentrations of metabolites reaches steady states
+            % #check whether the concentrations of metabolites reaches
+            % steady states#
             sizeT=size(d_plot);
             global tglobal;
             Tcheck = tglobal * 4/5;             
@@ -198,4 +201,5 @@ for i = 1:numofGen
         pop = mutate(pop, popSize, mutatePercentage);
         
         save CO2_280_1;     % Save the work space
+        %save output;
 end

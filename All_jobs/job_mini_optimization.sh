@@ -1,0 +1,12 @@
+#$ -S /bin/bash
+#$ -N mini_optimization_job
+
+#$ -l h_vmem=2.5G
+
+source /etc/profile
+module add matlab
+
+export MCR_CACHE_ROOT="$TMPDIR/mcrCache"
+mkdir -p $MCR_CACHE_ROOT
+
+./run_optimization > mini_output.mat

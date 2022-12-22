@@ -1,5 +1,5 @@
 %   Copyright   Xin-Guang Zhu and Stephen P. Long, University of Illinois 
-%   Copyright ©  2007
+%   Copyright Â©  2007
 
 %   This file is part of CarbonMetabolism.
 
@@ -95,6 +95,7 @@ MW=MWKcat(:,3);
 
 % Calculate the default nitrogen concentration
 sumd = 0;
+Eio(1)=Eio(1)*1.2; % Multiply Rubisco activity by 1.2 to adjust it to 80%
 for k = 1:VmaxNum
     sumd= sumd + pop(k+2,1)/BK(k)*MW(k);
 end 

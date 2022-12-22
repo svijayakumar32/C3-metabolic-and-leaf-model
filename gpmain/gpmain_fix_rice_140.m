@@ -67,7 +67,7 @@ mutatePercentage = 0.02;     % Maximal percentage of changes in Vmax in each gen
 
 % Different options of generating new population. Default is 1. 
 generationTransfer = 1; 
-VmaxNum = 26;           % The number of enzymes used in the optimization. 
+VmaxNum = 18;           % The number of enzymes used in the optimization. %originally 26, but ignoring some 
 
 factor = 1;
 ScaleR = factor;        % This is a factor used to modify the enzyme concentration.

@@ -18,7 +18,7 @@
 
 
 
-function returnPop = mutate(pop, popSize, mutatePercentage)
+function returnPop = mutate_w(pop, popSize, mutatePercentage)
 
 %%%% Global Variables %%%%
 

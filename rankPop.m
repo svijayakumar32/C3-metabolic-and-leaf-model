@@ -25,8 +25,9 @@ function rankPopulation = rankPop(pop, popSize)
     global VmaxNum;
     
     %%%%%%%% Evaluate Fitness %%%%%%%%%%
+%     NewM = zeros(VmaxNum+2,popSize);
     newM = zeros(VmaxNum+2,popSize);
-    
+
     CO2Array = zeros(popSize,1);
     
     for j = 1:popSize

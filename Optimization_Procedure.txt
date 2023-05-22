@@ -4,7 +4,8 @@
 
 3. Use Vcmax_adj.m to obtain optimal VRubisco (which gives lowest SSR)
 
-4. Run optimization for Ci=280 ppm using gpmain.m, setting VRubisco and Vmax to optimal values found using parameterisation step
+4. Run optimization for Cc=129 ppm using gpmain.m, setting VRubisco and Vmax to optimal values found using parameterisation step 
+(or edit Einput and set these both as 1 in gpmain)
 
 5. BestMatrix gives the optimal distribution of Vmax values for 67 photosynthetic enzymes (V1-V59)
 

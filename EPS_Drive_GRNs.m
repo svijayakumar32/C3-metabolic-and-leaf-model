@@ -9,7 +9,8 @@ Liin = PPFDi;
 Tpin = Tempi;
 GRNC = Gc;
 GRNT = GT;
-
+%% MOD 1 %%
+%Original indices%
 global EnzymeAct;
 EnzymeAct=Einput(1:27)/30;%unit change
 global Jmax;
@@ -17,7 +18,27 @@ Jmax=EnzymeAct(27);
 global BFVmax;
 BFVmax=Einput(28:45);
 global FIVmax;
-FIVmax=Einput(46:66);
+FIVmax=Einput(46:66); 
+
+%Adjust indices for enzyme activities after removing V16 % Comment out when using Jmax_adj or Vcmax_adj
+% global EnzymeAct;
+% EnzymeAct=Einput(1:26)/30;%unit change %EnzymeAct=Einput(1:27)/30;%unit change
+% global Jmax;
+% Jmax=EnzymeAct(26);% originally Jmax=EnzymeAct(27);
+% global BFVmax;
+% BFVmax=Einput(27:44); %BFVmax=Einput(28:45);
+% global FIVmax;
+% FIVmax=Einput(45:65); %FIVmax=Einput(46:66);
+
+% %Adjust indices for enzyme activities after removing V8,V10,V16 %18.05.23
+% global EnzymeAct;
+% EnzymeAct=Einput(1:24)/30;%unit change %EnzymeAct=Einput(1:27)/30;%unit change
+% global Jmax;
+% Jmax=EnzymeAct(24);% originally Jmax=EnzymeAct(27);
+% global BFVmax;
+% BFVmax=Einput(25:42); %BFVmax=Einput(28:45);
+% global FIVmax;
+% FIVmax=Einput(43:63); %FIVmax=Einput(46:66);
 
 global cATPsyn;
 global CPSi;
@@ -40,5 +61,5 @@ global VfactorT;
 
 VfactorC=GRN_data(1:33);
 
-Arate=EPS_Drive(Liin,CO2in,Tpin);
+Arate=EPS_Drive(Liin,CO2in,Tpin)
 end

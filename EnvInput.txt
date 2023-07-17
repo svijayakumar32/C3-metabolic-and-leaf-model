@@ -8,5 +8,5 @@ Radiation_LW		0.0
 PhotosynthesisType	1.1
 Vcmax25			100.0
 Jmax25			200.0
-GRNC			1.0
-ProteinTotalRatio	0.973
+GRNC			0
+ProteinTotalRatio	1

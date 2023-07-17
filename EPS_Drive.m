@@ -22,7 +22,8 @@
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function PhotosynthesisRate=EPS_Drive(lightinput,CO2input,Tempinput)
-
+global d_plot;
+global Tt_plot;
 Begin = 1;
 fin = SYSInitial(Begin);
 global CO2_Env;
@@ -49,7 +50,7 @@ beta=0.7519;
 
 Begin = 1;
 global tglobal;     % The total running time
-tglobal = 3000;
+tglobal = 20000;
 global options1 
 options1 = odeset('RelTol',1e-4);
 time = tglobal;
@@ -116,7 +117,8 @@ CO2A = zeros(5,1);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [Tt,d] = ode15s(@EPS_mb,[0,time],EPS_Con,options1,BF_Param, FI_Param, PS_PR_Param, Sucs_Param);
-
+d_plot=d;
+Tt_plot=Tt;
 %   The following section deals with the data output of the program.
 %GraphSuc = EPS_Graph(Tt,d);    
 % Here is the place to recover the status of the regulatory variables. 

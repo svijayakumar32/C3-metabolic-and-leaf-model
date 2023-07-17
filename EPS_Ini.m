@@ -103,7 +103,7 @@ PR_TIME_N = 1;
 PR_VEL = zeros(1,1);
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-%   Initialation step %
+%   Initialization step %
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 Begin = 1;
